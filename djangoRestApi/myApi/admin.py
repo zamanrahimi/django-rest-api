@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-# create restApi - section 1
+## create restApi - section 1
 
 
 from .models import Student
