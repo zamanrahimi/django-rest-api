@@ -28,7 +28,7 @@ def drink_list(request):
 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'DELETE', 'PUT'])
 def drink_detail(request, id):
 
 	try:
@@ -47,5 +47,10 @@ def drink_detail(request, id):
 			return Response(serializer.data)
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+	# working 
+	# http://localhost:8000/drinks/2/
+	# must use / at the end, otherwise not working 
 	elif request.method =='DELETE':
-		pass
+		Drink.objects.filter(pk=id).delete()
+		
+		return Response(status=status.HTTP_204_NO_CONTENT)
