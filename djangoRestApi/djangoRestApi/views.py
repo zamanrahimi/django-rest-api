@@ -13,4 +13,7 @@ def drink_list(request):
 	# 2. serialize the data 
 	serializer = DrinkSerializer(Drinks, many=True)
 	# 3. return the data 
-	return JsonResponse(serializer.data, safe=False) 
+	# sometimes use safe=false 
+	# return JsonResponse({"drinks":serializer.data}, safe=False)  
+
+	return JsonResponse({"drinks":serializer.data})  
