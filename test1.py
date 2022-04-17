@@ -1,1 +1,1 @@
-645 print('This is a Django Rest Framework project')
+646 print('This is a Django Rest Framework project')
